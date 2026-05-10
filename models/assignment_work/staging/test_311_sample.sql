@@ -1,5 +1,4 @@
-
- -- Quick test to verify source connection works
+-- Quick test to verify source connection works
  SELECT
      unique_key,
      created_date,
