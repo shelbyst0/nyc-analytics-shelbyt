@@ -89,3 +89,100 @@ sources:
             description: Y coordinate in NY State Plane projection system (NAD 83)
           - name: landmark
             description: Nearby landmark or point of interest
+version: 2
+sources:
+  - name: raw
+    description: Raw data loaded from NYC Open Data
+    database: ShelbyT
+    schema: nyc_restaurant_applications
+    tables:
+      - name: restaurant_seating_applications
+        description: |
+          NYC restaurant outdoor seating applications dataset.
+          One row per restaurant application.
+        columns:
+          - name: objectid
+            description: Unique record identifier for the restaurant application
+            tests:
+              - unique
+              - not_null
+          - name: restaurant_name
+            description: Name of the restaurant
+          - name: applicant
+            description: Legal applicant name submitting the application
+          - name: doing_business_as_dba
+            description: Doing Business As (DBA) name of the establishment
+          - name: boro
+            description: NYC borough where the restaurant is located
+          - name: building
+            description: Building number of the restaurant address
+          - name: street
+            description: Street name of the restaurant address
+          - name: zip
+            description: ZIP code of the restaurant location
+          - name: food_service_establishment
+            description: Indicates whether the establishment is a food service business
+          - name: seating_interest_sidewalk
+            description: Indicates interest in sidewalk seating
+          - name: sidewalk_dimensions_length
+            description: Proposed sidewalk seating length in feet
+          - name: sidewalk_dimensions_width
+            description: Proposed sidewalk seating width in feet
+          - name: sidewalk_dimensions_area
+            description: Total proposed sidewalk seating area in square feet
+          - name: roadway_dimensions_length
+            description: Proposed roadway seating length in feet
+          - name: roadway_dimensions_width
+            description: Proposed roadway seating width in feet
+          - name: roadway_dimensions_area
+            description: Total proposed roadway seating area in square feet
+          - name: approved_for_sidewalk_seating
+            description: Indicates whether sidewalk seating was approved
+          - name: approved_for_roadway_seating
+            description: Indicates whether roadway seating was approved
+          - name: qualify_alcohol
+            description: Indicates whether the establishment qualifies to serve alcohol
+          - name: sla_serial_number
+            description: New York State Liquor Authority serial number
+          - name: sla_license_type
+            description: Type of liquor license held by the establishment
+          - name: landmark_district_or_building
+            description: >-
+              Indicates whether the restaurant is located in a landmark district
+              or building
+          - name: landmark_status
+            description: Landmark approval status of the application
+          - name: healthcompliance
+            description: Indicates compliance with NYC Department of Health requirements
+          - name: time_of_submission
+            description: Timestamp when the application was submitted
+          - name: latitude
+            description: Latitude coordinate of the restaurant location
+          - name: longitude
+            description: Longitude coordinate of the restaurant location
+          - name: bbl
+            description: Borough Block and Lot number (NYC tax lot identifier)
+          - name: bin
+            description: Building Identification Number
+          - name: borough
+            description: NYC borough where the restaurant is located
+          - name: bulding_number
+            description: Building number of the business address
+          - name: business_address
+            description: Full business address of the establishment
+          - name: census_tract
+            description: Census tract where the restaurant is located
+          - name: community_board
+            description: NYC Community Board district number
+          - name: council_district
+            description: NYC Council district number
+          - name: globalid
+            description: Global identifier assigned by Socrata
+          - name: healthcompliance_terms
+            description: Health compliance terms and conditions
+          - name: landmarkdistrict_terms
+            description: Landmark district terms and conditions
+          - name: legal_business_name
+            description: Legal business name of the establishment
+          - name: nta
+            description: Neighborhood Tabulation Area (NTA)
