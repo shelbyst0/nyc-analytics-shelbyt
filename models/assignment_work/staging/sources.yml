@@ -90,9 +90,7 @@ sources:
           - name: landmark
             description: Nearby landmark or point of interest
 
-
-sources:
-  - name: raw
+  - name: raw_restaurants
     description: Raw data loaded from NYC Open Data
     database: ShelbyT
     schema: nyc_restaurant_applications
