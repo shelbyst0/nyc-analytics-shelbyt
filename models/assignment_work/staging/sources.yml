@@ -3,7 +3,7 @@ sources:
   - name: raw
     description: Raw data loaded from NYC Open Data
     database: shelbyt
-    schema: nyc_311_raw_data 
+    schema: nyc_311_raw_data
     tables:
       - name: source_dot_service_requests_history
         description: |
@@ -68,7 +68,7 @@ sources:
           - name: intersection_street_2
             description: Second street forming intersection where incident occurred
           - name: open_data_channel_type
-            description: How request was submitted (ONLINE, PHONE, MOBILE, etc.)
+            description: 'How request was submitted (ONLINE, PHONE, MOBILE, etc.)'
           - name: park_borough
             description: Borough of park where incident occurred
           - name: park_facility_name
@@ -80,7 +80,7 @@ sources:
           - name: road_ramp
             description: Road ramp identifier where incident occurred
           - name: status
-            description: Current status of request (Open, Closed, In Progress, etc.)
+            description: 'Current status of request (Open, Closed, In Progress, etc.)'
           - name: street_name
             description: Name of street where incident occurred
           - name: x_coordinate_state_plane
@@ -89,94 +89,98 @@ sources:
             description: Y coordinate in NY State Plane projection system (NAD 83)
           - name: landmark
             description: Nearby landmark or point of interest
-
-  - name: source_nyc_open_restaurant_apps
-    description: |
-      Applications for the Open Restaurants program in New York City.
-      One row per restaurant application.
-    columns:
-      - name: objectid
-        description: Unique record identifier for the restaurant application
-        tests:
-          - unique
-          - not_null
-      - name: restaurant_name
-        description: Name of the restaurant
-      - name: applicant
-        description: Legal applicant name submitting the application
-      - name: doing_business_as_dba
-        description: Doing Business As (DBA) name of the establishment
-      - name: boro
-        description: New York City borough where the restaurant is located
-      - name: building
-        description: Building number of the restaurant address
-      - name: street
-        description: Street name of the restaurant address
-      - name: zip
-        description: ZIP code of the restaurant location
-      - name: food_service_establishment
-        description: Indicates whether the establishment is a food service business
-      - name: seating_interest_sidewalk
-        description: Indicates interest in sidewalk seating
-      - name: sidewalk_dimensions_length
-        description: Proposed sidewalk seating length in feet
-      - name: sidewalk_dimensions_width
-        description: Proposed sidewalk seating width in feet
-      - name: sidewalk_dimensions_area
-        description: Total proposed sidewalk seating area in square feet
-      - name: roadway_dimensions_length
-        description: Proposed roadway seating length in feet
-      - name: roadway_dimensions_width
-        description: Proposed roadway seating width in feet
-      - name: roadway_dimensions_area
-        description: Total proposed roadway seating area in square feet
-      - name: approved_for_sidewalk_seating
-        description: Indicates whether sidewalk seating was approved
-      - name: approved_for_roadway_seating
-        description: Indicates whether roadway seating was approved
-      - name: qualify_alcohol
-        description: Indicates whether the establishment qualifies to serve alcohol
-      - name: sla_serial_number
-        description: New York State Liquor Authority serial number
-      - name: sla_license_type
-        description: Type of liquor license held by the establishment
-      - name: landmark_district_or_building
-        description: >-
-          Indicates whether the restaurant is located in a landmark district or
-          building
-      - name: landmark_status
-        description: Landmark approval status of the application
-      - name: healthcompliance
-        description: Indicates compliance with NYC Department of Health requirements
-      - name: time_of_submission
-        description: Timestamp when the application was submitted
-      - name: latitude
-        description: Latitude coordinate of the restaurant location
-      - name: longitude
-        description: Longitude coordinate of the restaurant location
-      - name: bbl
-        description: Borough Block and Lot number
-      - name: bin
-        description: Building Identification Number
-      - name: borough
-        description: NYC borough name
-      - name: bulding_number
-        description: Building number
-      - name: business_address
-        description: Full business address
-      - name: census_tract
-        description: Census tract location
-      - name: community_board
-        description: NYC Community Board district
-      - name: council_district
-        description: NYC Council District
-      - name: globalid
-        description: Global unique identifier
-      - name: healthcompliance_terms
-        description: Health compliance terms agreed to
-      - name: landmarkdistrict_terms
-        description: Landmark district terms agreed to
-      - name: legal_business_name
-        description: Legal name of the business entity
-      - name: nta
-        description: Neighborhood Tabulation Area
+  - name: raw_restaurants
+    description: Raw restaurant application data from NYC Open Data
+    database: shelbyt
+    schema: nyc_restaurant_applications
+    tables:
+      - name: source_nyc_open_restaurant_apps
+        description: |
+          Applications for the Open Restaurants program in New York City.
+          One row per restaurant application.
+        columns:
+          - name: objectid
+            description: Unique record identifier for the restaurant application
+            tests:
+              - unique
+              - not_null
+          - name: restaurant_name
+            description: Name of the restaurant
+          - name: applicant
+            description: Legal applicant name submitting the application
+          - name: doing_business_as_dba
+            description: Doing Business As (DBA) name of the establishment
+          - name: boro
+            description: New York City borough where the restaurant is located
+          - name: building
+            description: Building number of the restaurant address
+          - name: street
+            description: Street name of the restaurant address
+          - name: zip
+            description: ZIP code of the restaurant location
+          - name: food_service_establishment
+            description: Indicates whether the establishment is a food service business
+          - name: seating_interest_sidewalk
+            description: Indicates interest in sidewalk seating
+          - name: sidewalk_dimensions_length
+            description: Proposed sidewalk seating length in feet
+          - name: sidewalk_dimensions_width
+            description: Proposed sidewalk seating width in feet
+          - name: sidewalk_dimensions_area
+            description: Total proposed sidewalk seating area in square feet
+          - name: roadway_dimensions_length
+            description: Proposed roadway seating length in feet
+          - name: roadway_dimensions_width
+            description: Proposed roadway seating width in feet
+          - name: roadway_dimensions_area
+            description: Total proposed roadway seating area in square feet
+          - name: approved_for_sidewalk_seating
+            description: Indicates whether sidewalk seating was approved
+          - name: approved_for_roadway_seating
+            description: Indicates whether roadway seating was approved
+          - name: qualify_alcohol
+            description: Indicates whether the establishment qualifies to serve alcohol
+          - name: sla_serial_number
+            description: New York State Liquor Authority serial number
+          - name: sla_license_type
+            description: Type of liquor license held by the establishment
+          - name: landmark_district_or_building
+            description: >-
+              Indicates whether the restaurant is located in a landmark district
+              or building
+          - name: landmark_status
+            description: Landmark approval status of the application
+          - name: healthcompliance
+            description: Indicates compliance with NYC Department of Health requirements
+          - name: time_of_submission
+            description: Timestamp when the application was submitted
+          - name: latitude
+            description: Latitude coordinate of the restaurant location
+          - name: longitude
+            description: Longitude coordinate of the restaurant location
+          - name: bbl
+            description: Borough Block and Lot number
+          - name: bin
+            description: Building Identification Number
+          - name: borough
+            description: NYC borough name
+          - name: bulding_number
+            description: Building number
+          - name: business_address
+            description: Full business address
+          - name: census_tract
+            description: Census tract location
+          - name: community_board
+            description: NYC Community Board district
+          - name: council_district
+            description: NYC Council District
+          - name: globalid
+            description: Global unique identifier
+          - name: healthcompliance_terms
+            description: Health compliance terms agreed to
+          - name: landmarkdistrict_terms
+            description: Landmark district terms agreed to
+          - name: legal_business_name
+            description: Legal name of the business entity
+          - name: nta
+            description: Neighborhood Tabulation Area
