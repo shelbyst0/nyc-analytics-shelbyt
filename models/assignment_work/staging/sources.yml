@@ -93,9 +93,9 @@ sources:
   - name: raw_restaurants
     description: Raw data loaded from NYC Open Data
     database: shelbyt
-    schema: nyc_restaurant_applications
+    schema: nyc_311_raw_data
     tables:
-      - name: restaurant_seating_applications
+      - name: source_nyc_open_restaurant_application_historic
         description: |
           NYC restaurant outdoor seating applications dataset.
           One row per restaurant application.
