@@ -10,7 +10,7 @@ WITH all_dates AS (
 
    -- Get dates from restaurant applications
    SELECT DISTINCT CAST(time_of_submission AS DATE) AS full_date
-   FROM {{ ref('stg_nyc_restaurant_app') }}
+   FROM {{ ref('stg_nyc_restaurants_app') }}
    WHERE time_of_submission IS NOT NULL
 ),
 
