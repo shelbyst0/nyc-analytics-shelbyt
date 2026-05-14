@@ -89,11 +89,7 @@ sources:
             description: Y coordinate in NY State Plane projection system (NAD 83)
           - name: landmark
             description: Nearby landmark or point of interest
-  - name: raw_restaurants
-    description: Raw restaurant application data from NYC Open Data
-    database: ShelbyT
-    schema: nyc_hw3_raw_data
-    tables:
+            
       - name: source_open_restaurants_application_historic
         description: |
           Applications for the Open Restaurants program in New York City.
